@@ -9,14 +9,14 @@ Created on Thu Feb 13 05:29:18 2020
 #GRAFICOS ESTADISTICOS CON MATPLOTLIB
 #TEMA: VIDEOJUEGOS
 from faker import Faker
-#from faker.providers import internet
-#from faker_credit_score import CreditScore #usar para crear socre de juegos Fuente: https://faker.readthedocs.io/en/stable/providers.html
+from faker.providers import internet
+from faker_credit_score import CreditScore #usar para crear socre de juegos Fuente: https://faker.readthedocs.io/en/stable/providers.html
 import pandas as pd
 import random
 fake = Faker()
 
+####################################
 
-################################
 # Numero de filas de la base a crear
 numero_casos=100000
 
@@ -39,7 +39,7 @@ for _ in range(numero_casos):
     #crea nombre de juego # reemplazar los nombres despues
     juego.append(fake.credit_score_provider())
     #crea usuarios de prueba
-    tipo_juego.append(random.choise(["Aventura","Arcade","Estrategia"]))
+    tipo_juego.append(random.choise(["Aventura","Arcade","Estrategia", "Simulacion", "Rol", "Deportes", "Accion"]))
     #crea usuarios de prueba
     tiempo_juego.append(random.random())
     #crea usuarios de prueba
@@ -50,9 +50,3 @@ for _ in range(numero_casos):
 
 frame = { 'fecha': pd.Series(fecha), 'usuario': pd.Series(usuario), 'puntaje':pd.Series(puntaje), 'juego':pd.Series(juego), 'tipo_juego':pd.Series(tipo_juego), 'tiempo_juego':pd.Series(tiempo_juego), 'posicion_jugador':pd.Series(posicion_jugador), 'nivel':pd.Series(nivel)} 
 df = pd.DataFrame(frame) #USAR ESTE DATAFRAME PARA LOS GRAFICOS
-
-
-
-
-
-
