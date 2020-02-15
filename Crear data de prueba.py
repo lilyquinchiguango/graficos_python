@@ -39,13 +39,13 @@ for _ in range(numero_casos):
     #crea nombre de juego # reemplazar los nombres despues
     juego.append(fake.credit_score_provider())
     #crea usuarios de prueba
-    tipo_juego.append(random.choise(["Aventura","Arcade","Estrategia", "Simulacion", "Rol", "Deportes", "Accion"]))
+    tipo_juego.append(random.choice(["Aventura","Arcade","Estrategia", "Simulacion", "Rol", "Deportes", "Accion"]))
     #crea usuarios de prueba
     tiempo_juego.append(random.random())
     #crea usuarios de prueba
-    posicion_jugador.append(random.choise(["Primero","Segundo","Tercero"]))
+    posicion_jugador.append(random.choice(["Primero","Segundo","Tercero"]))
     #crea usuarios de prueba
-    nivel.append(random.choise(["Facil","Intermedio","Dificil"]))
+    nivel.append(random.choice(["Facil","Intermedio","Dificil"]))
 
 
 frame = { 'fecha': pd.Series(fecha), 'usuario': pd.Series(usuario), 'puntaje':pd.Series(puntaje), 'juego':pd.Series(juego), 'tipo_juego':pd.Series(tipo_juego), 'tiempo_juego':pd.Series(tiempo_juego), 'posicion_jugador':pd.Series(posicion_jugador), 'nivel':pd.Series(nivel)} 
